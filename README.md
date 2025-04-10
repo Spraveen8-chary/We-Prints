@@ -1,5 +1,5 @@
 # 💻 WePrints – 13-Week Project
-> Welcome to your 13-week Full Stack Developer journey for the **WePrints** project!  
+> Welcome to your 13-week **WePrints** project!  
 > Designed like agile sprints, each week includes core learning objectives, hands-on assignments, and milestone outcomes.  
 > Use this roadmap in Notion or GitHub — tick off each task and keep pushing forward. Let's build something epic! 💪🔥
 
