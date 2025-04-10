@@ -1,263 +1,145 @@
-# We Prints - Full Stack System Roadmap (Beginner-Friendly - MERN Stack)
+**We Prints - Full Stack System Roadmap (Beginner-Friendly - MERN Stack)**
 
 ---
 
-## ✨ System Architecture Overview
+## 🌐 **System Architecture Overview**
 
-### Layers:
-1. **Client Layer** – _React.js + TypeScript + Redux_  
-   Handles UI rendering and state management  
-2. **Application Layer** – _Node.js + Express.js_  
-   Manages business logic and API routing  
-3. **Service Layer** – _Python_  
-   Handles ML/AI tasks like recommendation, review analysis, dynamic pricing  
-4. **Data Layer** – _MongoDB_  
-   Stores user data, product metadata, order records, etc.  
-5. **Infrastructure** – _Docker, Git, CI/CD, Kubernetes, AWS/Azure_  
-   Ensures containerization, continuous integration and deployment, scalability, and cloud hosting  
+**Layers**:
+1. **Client Layer** – React.js + TypeScript + Redux (UI, State Management)
+2. **Application Layer** – Node.js + Express.js (Business Logic)
+3. **Service Layer** – Python (ML/AI-based tasks like Recommendation, Review Analysis)
+4. **Data Layer** – MongoDB (Document-based storage)
+5. **Infrastructure** – Docker, Git, CI/CD, Kubernetes, AWS/Azure
 
 ---
 
-## 🔁 User Journey – Feature-by-Feature Breakdown
+## 🔁 **User Journey (Step-by-Step)**
+
+### 1. **User Registration/Login**
+- **What to do**:
+  - Create a form using React for user registration/login
+  - Use Express to handle the API route
+  - Hash passwords using Bcrypt and store in MongoDB
+  - Generate JWT token for session
+- **Reference**:
+  - [JWT Auth Tutorial (YouTube)](https://youtu.be/mbsmsi7l3r4)
+  - [MongoDB + Mongoose Auth Guide](https://www.freecodecamp.org/news/how-to-create-a-registration-form-with-react-and-node-js/)
+
+### 2. **Product Browsing & Selection**
+- **What to do**:
+  - Build a product list component with filtering
+  - Fetch products from MongoDB using an API route
+  - Display using React with optional pagination
+- **Reference**:
+  - [Build a Product Catalog in React](https://www.smashingmagazine.com/2020/01/product-page-react/)
+
+### 3. **3D View & Virtual Trial**
+- **What to do**:
+  - Use Three.js to render product 3D models
+  - Load 3D assets from backend
+  - Optionally integrate AR using MediaPipe or WebXR
+- **Reference**:
+  - [Three.js Crash Course](https://threejs.org/docs/index.html)
+  - [AR in Web Apps](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+
+### 4. **Customization**
+- **What to do**:
+  - Allow users to change color, size, etc.
+  - Store state using Redux or localStorage
+  - Update backend with customized config
+- **Reference**:
+  - [Redux Docs](https://redux.js.org/introduction/getting-started)
+
+### 5. **Price Negotiation**
+- **What to do**:
+  - Create a UI for user input of suggested price or coupon
+  - Backend (Python) decides if price is accepted using simple logic or ML model
+- **Reference**:
+  - [Dynamic Pricing with Python](https://medium.com/analytics-vidhya/dynamic-pricing-model-with-machine-learning-5adfa82a2a5a)
+
+### 6. **Cart and Checkout**
+- **What to do**:
+  - Manage cart using Redux or Context API
+  - On checkout, send cart data to backend for validation
+- **Reference**:
+  - [React Shopping Cart Example](https://blog.logrocket.com/creating-custom-shopping-cart-react/)
+
+### 7. **Payment Processing**
+- **What to do**:
+  - Use Stripe or Razorpay SDK
+  - Secure the route with backend token validation
+- **Reference**:
+  - [Stripe Integration with React + Node](https://stripe.com/docs/payments/integration-builder)
+
+### 8. **Order Confirmation & Tracking**
+- **What to do**:
+  - After payment, generate order and update MongoDB
+  - Use sockets or polling for order status tracking
+- **Reference**:
+  - [Socket.IO Real-Time Updates](https://socket.io/get-started/chat/)
+
+### 9. **Review and Feedback**
+- **What to do**:
+  - Allow user to submit text/image/rating
+  - Backend uses Python (NLP) to check review authenticity
+- **Reference**:
+  - [Text Classification with Python](https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html)
 
 ---
 
-### 1. User Registration/Login
+## 💡 **Key Feature Breakdown + Technologies + Links**
 
-**Objective:**  
-Securely register and authenticate users.
-
-**Tasks:**
-- Frontend: React form (email, password), input validation
-- Backend: API with Express, password hashing (Bcrypt), JWT session management
-- Database: Store user data in MongoDB
-
-**Inputs:**  
-- Email *(required)*  
-- Password *(required)*
-
-**Outputs:**  
-- JWT Token  
-- Authenticated User Session  
-
-**Tech:** React, Redux, TypeScript, Node.js, Express.js, Bcrypt, JWT, MongoDB
-
----
-
-### 2. Product Browsing & Selection
-
-**Objective:**  
-Let users browse available products.
-
-**Tasks:**
-- UI list/grid, filters (price/category), pagination
-- Backend API to fetch and filter products
-- Store product data in MongoDB
-
-**Inputs:**  
-- Filter query *(optional)*
-
-**Outputs:**  
-- Product list (paginated)
-
-**Tech:** React, Express.js, MongoDB
+| Feature                      | Input                      | Output                            | Tech Stack                          | References |
+|-----------------------------|----------------------------|-----------------------------------|-------------------------------------|-------------|
+| 3D Product View             | Product ID                 | Interactive Viewer                | Three.js, React                     | [Three.js Docs](https://threejs.org/) |
+| Virtual Trial               | Camera Input/Image         | AR/AI Try-on                      | MediaPipe, React                    | [MediaPipe](https://mediapipe.dev/) |
+| Chatbot Support             | User Query                 | Real-time Assistance              | OpenAI, Socket.IO                   | [Chatbot with OpenAI](https://platform.openai.com/docs) |
+| Recommendation System      | User History               | Personalized Suggestions          | Python ML, MongoDB                  | [Recommendation Systems](https://www.analyticsvidhya.com/blog/2021/06/build-your-own-recommendation-system-in-python/) |
+| Price Negotiation System   | User Offer                 | Discounted Price                  | Python Backend                      | [Dynamic Pricing](https://medium.com/analytics-vidhya/dynamic-pricing-model-with-machine-learning-5adfa82a2a5a) |
+| Product Comparison          | Product IDs                | Side-by-side Display              | React, MongoDB                      | [Product Comparison UI](https://reactjsexample.com/tag/comparison/) |
+| Payment Models              | UPI/Card                   | Confirmation                      | Stripe/Razorpay                     | [Stripe Docs](https://stripe.com/docs) |
+| Logging System              | App Events                 | Activity Logs                     | Winston, MongoDB                    | [Winston Logger](https://github.com/winstonjs/winston) |
+| Cold Email System           | User Emails                | Campaign                          | NodeMailer, SMTP                    | [Nodemailer Guide](https://nodemailer.com/about/) |
+| Offer Generation            | User Behavior              | Discounts                         | Python Rules Engine                 | [Simple Discount Logic](https://towardsdatascience.com/discount-logic-machine-learning-45d7608c9cd8) |
+| Fake Review Detection       | Review Text                | Authentic/Fake                    | Python, Scikit-learn                | [NLP Fake Review Detection](https://towardsdatascience.com/fake-product-review-detection-using-nlp-d0c20a3b9a63) |
+| Analytics Dashboard         | Data                       | Charts, Stats                     | Chart.js/D3, MongoDB                | [Chart.js Docs](https://www.chartjs.org/docs/latest/) |
+| Role-Based User Management  | Role                       | Access Control                    | JWT, Express, MongoDB               | [RBAC in Node.js](https://dev.to/franciscomendes10866/role-based-access-control-rbac-in-node-js-4fgf) |
+| Product Composition         | Selections                 | Configured Product                | React, Redux, MongoDB               | [Product Builder UI](https://reactjsexample.com/tag/configurator/) |
+| Product Detail Components   | Metadata                   | Full Info                         | MongoDB Schema                      | [MongoDB Schema Design](https://www.mongodb.com/docs/manual/core/data-modeling-introduction/) |
 
 ---
 
-### 3. 3D Product View & Virtual Trial
+## 🛠️ **Beginner-Friendly Learning Path (with Resources)**
 
-**Objective:**  
-Let users interact with 3D models or try-on using AR.
+### 1. **Frontend Basics**
+- Learn React + Redux → [React Docs](https://reactjs.org/), [Redux Toolkit](https://redux-toolkit.js.org/)
+- Styling → [Tailwind CSS](https://tailwindcss.com/docs/installation)
+- 3D → [Three.js Basics](https://threejs.org/)
 
-**Tasks:**
-- Use Three.js for product model rendering
-- Optionally integrate AR (MediaPipe or WebXR)
-- Backend API to serve 3D model assets
-
-**Inputs:**  
-- Product ID *(required)*  
-- Camera Access *(optional)*
-
-**Outputs:**  
-- Interactive 3D/AR product display
-
-**Tech:** Three.js, WebXR, MediaPipe, React
-
----
-
-### 4. Product Customization
-
-**Objective:**  
-Let users personalize products (color, size, text, etc.)
-
-**Tasks:**
-- UI for customization inputs
-- Save data via Redux/localStorage
-- Send selected config to backend
-
-**Inputs:**  
-- Size *(required)*  
-- Color *(required)*  
-- Custom text/image *(optional)*
-
-**Outputs:**  
-- Live customized preview  
-- Custom config saved
-
-**Tech:** React, Redux, Express, MongoDB
-
----
-
-### 5. Price Negotiation
-
-**Objective:**  
-Let users submit discount offers or apply coupons.
-
-**Tasks:**
-- Form for input
-- Python logic to validate or apply discount
-- Dynamic pricing logic or ML model (optional)
-
-**Inputs:**  
-- Suggested price or coupon *(required)*
-
-**Outputs:**  
-- Finalized discount price
-
-**Tech:** React, Python (Flask or FastAPI)
-
----
-
-### 6. Cart & Checkout
-
-**Objective:**  
-Add products to cart and proceed to checkout.
-
-**Tasks:**
-- Cart state using Redux or Context API
-- Backend checks product availability and price
-
-**Inputs:**  
-- Selected items *(required)*
-
-**Outputs:**  
-- Checkout confirmation or errors
-
-**Tech:** React, Redux, Express, MongoDB
-
----
-
-### 7. Payment Processing
-
-**Objective:**  
-Process user payments securely.
-
-**Tasks:**
-- Integrate Stripe or Razorpay
-- Validate and authorize payment via backend
-
-**Inputs:**  
-- Card/UPI details *(required)*
-
-**Outputs:**  
-- Payment confirmation
-
-**Tech:** Stripe/Razorpay, React, Express
-
----
-
-### 8. Order Confirmation & Tracking
-
-**Objective:**  
-Generate order, track real-time status
-
-**Tasks:**
-- Order ID generated & stored
-- Polling/Socket.IO for live status updates
-
-**Inputs:**  
-- Order ID *(required)*
-
-**Outputs:**  
-- Status (Confirmed, Shipped, Delivered, etc.)
-
-**Tech:** Socket.IO, MongoDB, React
-
----
-
-### 9. Review & Feedback
-
-**Objective:**  
-Collect and analyze product feedback.
-
-**Tasks:**
-- Review form with text, star rating, image upload
-- Python-based NLP to check review authenticity
-
-**Inputs:**  
-- Rating *(required)*  
-- Text/image *(optional)*
-
-**Outputs:**  
-- Review stored  
-- Authenticity score
-
-**Tech:** React, Python (Scikit-learn), MongoDB
-
----
-
-## 💡 Key Features Breakdown
-
-| Feature                    | Input                 | Output                    | Tech Stack                      | Notes                            |
-|---------------------------|------------------------|----------------------------|----------------------------------|----------------------------------|
-| 3D Product View           | Product ID             | Interactive viewer         | Three.js, React                 | Optional AR supported            |
-| Virtual Trial             | Camera/Image           | Try-on Preview             | MediaPipe, WebXR                | AR optional                      |
-| Chatbot Support           | User Message           | Real-time Reply            | OpenAI, Socket.IO               | 24/7 Support                     |
-| Recommendation System     | User History           | Suggestions                | Python ML, MongoDB              | Content-based filtering          |
-| Price Negotiation System  | Offer/Coupon           | Final Price                | Python (FastAPI)                | Rule-based or ML pricing         |
-| Product Comparison        | Product IDs            | Comparison Table           | React, MongoDB                  | Feature-wise UI                  |
-| Payment Gateway           | Card/UPI Info          | Payment Success/Fail       | Stripe, Razorpay                | Tokenization support             |
-| Logging System            | App Events             | Log files                  | Winston, MongoDB                | Debugging/tracking               |
-| Cold Email Campaigns      | User Emails            | Email Delivery             | NodeMailer, SMTP                | Targeted marketing               |
-| Offer Generation          | User Behavior          | Discount Offers            | Python Engine                   | Rule-based personalization       |
-| Fake Review Detection     | Review Text            | Genuine/Fake flag          | Python, Scikit-learn            | Text classification model        |
-| Analytics Dashboard       | System Usage           | Graphs/Charts              | Chart.js, MongoDB               | Business intelligence            |
-| Role-Based Access Control | User Role              | Limited Access             | JWT, MongoDB, Express           | Admin/User separation            |
-| Product Builder UI        | Custom Selections      | Configured Product         | React, Redux, MongoDB           | Visual product editor            |
-
----
-
-## 🛠️ Beginner-Friendly Learning Path
-
-### Frontend
-- [React Docs](https://reactjs.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Three.js Guide](https://threejs.org/docs/)
-
-### Backend
-- [Node.js Docs](https://nodejs.org/en/docs/)
+### 2. **Backend with Node.js + Express**
+- [Node.js Crash Course](https://youtu.be/fBNz5xF-Kx4)
 - [Express.js Docs](https://expressjs.com/)
 
-### Database
-- [MongoDB CRUD](https://www.mongodb.com/docs/manual/crud/)
-- [Mongoose Guide](https://mongoosejs.com/)
+### 3. **MongoDB**
+- [MongoDB CRUD Tutorial](https://www.mongodb.com/basics/crud-operations)
+- [Mongoose ODM](https://mongoosejs.com/docs/guide.html)
 
-### AI & ML
-- [Scikit-learn](https://scikit-learn.org/stable/tutorial/)
-- [TensorFlow](https://www.tensorflow.org/tutorials)
+### 4. **AI/ML Basics with Python**
+- [Scikit-learn Tutorial](https://scikit-learn.org/stable/tutorial/index.html)
+- [TensorFlow Intro](https://www.tensorflow.org/tutorials)
 
-### DevOps & CI/CD
-- [Docker Tutorial](https://docker-curriculum.com/)
-- [GitHub Actions](https://docs.github.com/en/actions)
+### 5. **DevOps (CI/CD + Docker)**
+- [Docker for Beginners](https://docker-curriculum.com/)
+- [GitHub Actions Guide](https://docs.github.com/en/actions)
 
-### Testing & Deployment
-- [Postman Docs](https://learning.postman.com/)
-- [Render Deployment](https://render.com/)
-- [Heroku Deployment](https://devcenter.heroku.com/)
+### 6. **Testing & Deployment**
+- [Postman for API Testing](https://learning.postman.com/docs/getting-started/introduction/)
+- [Heroku Deployment](https://devcenter.heroku.com/categories/reference)
+- [Render Deploy Guide](https://render.com/docs/deploy-node-express-app)
 
 ---
 
-> 🧬 "Start simple. Build one feature at a time. Commit your progress regularly. Test, Deploy, Learn, Repeat."
+> 💬 _"Start simple. Build one feature at a time. Commit your progress regularly. Test, Deploy, Learn, Repeat!"_
 
-You're now ready to build **WePrints** like a pro! 🚀
+You're all set to go from Zero to Hero in Full Stack Dev. 🚀
+
